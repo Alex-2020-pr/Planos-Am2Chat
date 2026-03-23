@@ -28,7 +28,6 @@
             padding: 2rem 1.5rem;
         }
 
-        /* Header / Hero */
         .hero {
             text-align: center;
             margin-bottom: 3rem;
@@ -39,18 +38,12 @@
             align-items: center;
             gap: 8px;
             background: rgba(0, 102, 204, 0.12);
-            backdrop-filter: blur(2px);
             padding: 0.4rem 1rem;
             border-radius: 60px;
             font-size: 0.85rem;
             font-weight: 600;
             color: #0066cc;
             margin-bottom: 1.5rem;
-            letter-spacing: -0.2px;
-        }
-
-        .badge i {
-            font-size: 0.9rem;
         }
 
         h1 {
@@ -60,7 +53,6 @@
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            letter-spacing: -0.02em;
             margin-bottom: 1rem;
         }
 
@@ -70,10 +62,8 @@
             max-width: 720px;
             margin: 0 auto;
             font-weight: 500;
-            opacity: 0.85;
         }
 
-        /* Link destaque para o AM2 Chat */
         .hero-cta {
             margin-top: 1.8rem;
             display: flex;
@@ -95,12 +85,13 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 12px rgba(0,102,204,0.3);
             font-size: 1rem;
+            border: none;
+            cursor: pointer;
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(0,102,204,0.4);
-            background: linear-gradient(135deg, #0052a3, #0088ee);
         }
 
         .btn-outline-site {
@@ -116,6 +107,7 @@
             transition: 0.2s;
             text-decoration: none;
             font-size: 0.95rem;
+            cursor: pointer;
         }
 
         .btn-outline-site:hover {
@@ -123,91 +115,192 @@
             color: white;
         }
 
-        /* dois cards principais de soluções */
-        .solutions-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-bottom: 4rem;
+        .btn-clear {
+            background: #f0f2f5;
+            border: 1px solid #d0e0ee;
+            color: #4a627a;
+            padding: 0.6rem 1.2rem;
+            border-radius: 2rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 1rem;
+            width: 100%;
+            font-family: 'Inter', sans-serif;
         }
 
-        .solution-card {
+        .btn-clear:hover {
+            background: #e4e9ef;
+            border-color: #0066cc;
+            color: #0066cc;
+        }
+
+        .tabs-container {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 0.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid #e2edf2;
+        }
+        
+        .tab-btn {
             flex: 1;
-            min-width: 280px;
+            padding: 1rem;
+            border: none;
+            background: transparent;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+            color: #5a6e84;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .tab-btn i {
+            margin-right: 8px;
+        }
+        
+        .tab-btn.active {
+            background: linear-gradient(135deg, #0066cc, #0099ff);
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,102,204,0.2);
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .simulator-card {
             background: white;
             border-radius: 2rem;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
-            transition: all 0.25s ease;
-            overflow: hidden;
-            border: 1px solid rgba(0, 102, 204, 0.15);
+            padding: 2rem;
+            box-shadow: 0 12px 24px -12px rgba(0,0,0,0.1);
+            border: 1px solid #e2edf2;
         }
-
-        .solution-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 28px 40px -16px rgba(0, 80, 120, 0.2);
-            border-color: rgba(0, 153, 255, 0.3);
-        }
-
-        .card-header {
-            padding: 1.8rem 1.8rem 1rem 1.8rem;
-            border-bottom: 2px solid #eef2f8;
-        }
-
-        .card-header h2 {
-            font-size: 1.9rem;
+        
+        .simulator-title {
+            font-size: 1.5rem;
             font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #0a3b55;
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 0.5rem;
         }
-
-        .card-header h2 i {
-            font-size: 2rem;
-            color: #0077cc;
+        
+        .simulator-group {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eef2f8;
         }
-
-        .card-desc {
-            color: #4a627a;
-            font-weight: 500;
-            margin-top: 8px;
-            font-size: 0.9rem;
-        }
-
-        .card-content {
-            padding: 1.8rem;
-        }
-
-        .price-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9rem;
-        }
-
-        .price-table th, .price-table td {
-            padding: 0.9rem 0.5rem;
-            border-bottom: 1px solid #e9edf2;
-            text-align: left;
-        }
-
-        .price-table th {
+        
+        .simulator-label {
             font-weight: 600;
             color: #1f4e79;
-            width: 55%;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-
-        .price-table td {
-            font-weight: 600;
-            color: #0a2f44;
-            text-align: right;
-        }
-
-        .highlight-price {
-            font-weight: 800;
-            color: #0070e0;
+        
+        .input-number {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #d0e0ee;
+            border-radius: 1rem;
             font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            background: #fafcff;
         }
-
+        
+        .input-number:focus {
+            outline: none;
+            border-color: #0066cc;
+            box-shadow: 0 0 0 3px rgba(0,102,204,0.1);
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #f8fafd;
+            padding: 0.6rem 1rem;
+            border-radius: 1rem;
+            cursor: pointer;
+            border: 1px solid #e2edf2;
+        }
+        
+        .checkbox-item:hover {
+            background: #eef3fc;
+            border-color: #0066cc;
+        }
+        
+        .checkbox-item input {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #0066cc;
+        }
+        
+        .plan-select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #d0e0ee;
+            border-radius: 1rem;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            background: #fafcff;
+            cursor: pointer;
+        }
+        
+        .total-value {
+            background: linear-gradient(135deg, #0066cc10, #0099ff10);
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        
+        .total-label {
+            font-size: 0.9rem;
+            color: #4a627a;
+            letter-spacing: 1px;
+        }
+        
+        .total-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0066cc;
+            margin-top: 0.5rem;
+        }
+        
+        .price-detail {
+            font-size: 0.8rem;
+            color: #5b7a9a;
+            margin-top: 0.5rem;
+        }
+        
         .info-note {
             margin-top: 1.2rem;
             background: #f0f7fe;
@@ -219,11 +312,94 @@
             align-items: center;
             gap: 10px;
         }
-
-        .info-note i {
-            font-size: 1.1rem;
+        
+        .include-checkbox {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            background: #f8fafd;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            border: 1px solid #e2edf2;
         }
-
+        
+        .include-checkbox:hover {
+            background: #eef3fc;
+            border-color: #0066cc;
+        }
+        
+        .include-checkbox input {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #0066cc;
+        }
+        
+        .solutions-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        .solution-card {
+            flex: 1;
+            min-width: 280px;
+            background: white;
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            border: 1px solid rgba(0, 102, 204, 0.15);
+        }
+        .card-header {
+            padding: 1.8rem 1.8rem 1rem 1.8rem;
+            border-bottom: 2px solid #eef2f8;
+        }
+        .card-header h2 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card-header h2 i {
+            font-size: 2rem;
+            color: #0077cc;
+        }
+        .card-desc {
+            color: #4a627a;
+            font-weight: 500;
+            margin-top: 8px;
+            font-size: 0.9rem;
+        }
+        .card-content {
+            padding: 1.8rem;
+        }
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .price-table th, .price-table td {
+            padding: 0.9rem 0.5rem;
+            border-bottom: 1px solid #e9edf2;
+            text-align: left;
+        }
+        .price-table th {
+            font-weight: 600;
+            color: #1f4e79;
+            width: 55%;
+        }
+        .price-table td {
+            font-weight: 600;
+            color: #0a2f44;
+            text-align: right;
+        }
+        .highlight-price {
+            font-weight: 800;
+            color: #0070e0;
+        }
         .ia-badge {
             display: inline-block;
             background: #eef2ff;
@@ -234,14 +410,12 @@
             font-weight: 600;
             margin-left: 8px;
         }
-
         .notify-plan {
             background: #fafcff;
             border-radius: 1rem;
             margin-bottom: 1.4rem;
             border: 1px solid #e2edf7;
         }
-
         .plan-row {
             display: flex;
             justify-content: space-between;
@@ -251,17 +425,14 @@
             flex-wrap: wrap;
             gap: 8px;
         }
-
         .plan-row:last-child {
             border-bottom: none;
         }
-
         .plan-name {
             font-weight: 700;
             font-size: 1rem;
             color: #1f4662;
         }
-
         .plan-msgs {
             font-size: 0.8rem;
             background: #eef3fc;
@@ -269,77 +440,22 @@
             border-radius: 40px;
             font-weight: 500;
         }
-
         .plan-price {
             font-weight: 800;
             font-size: 1.1rem;
             color: #0c4e6e;
         }
-
-        .highlight-badge {
-            background: #e9f7e1;
-            color: #2b6e3b;
-            font-size: 0.7rem;
-            padding: 2px 10px;
-            border-radius: 30px;
-            font-weight: 600;
+        .plan-destaque {
+            background: linear-gradient(135deg, #fff9e6, #fff3d6);
+            border-left: 3px solid #ff9800;
         }
-
-        footer {
-            text-align: center;
-            border-top: 1px solid #dce5ec;
-            padding-top: 2rem;
-            margin-top: 2rem;
-            font-size: 0.8rem;
-            color: #5b7b9a;
-        }
-
-        @media (max-width: 820px) {
-            .container {
-                padding: 1.5rem;
-            }
-            h1 {
-                font-size: 2.2rem;
-            }
-            .card-header h2 {
-                font-size: 1.6rem;
-            }
-            .price-table th, .price-table td {
-                padding: 0.7rem 0.3rem;
-            }
-        }
-
-        @media (max-width: 680px) {
-            .solutions-grid {
-                flex-direction: column;
-            }
-            .plan-row {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .plan-price {
-                align-self: flex-end;
-            }
-        }
-
-        .storage-note {
-            font-size: 0.75rem;
-            background: #ffffffd9;
-            margin-top: 12px;
-            padding: 6px 0;
-            color: #2c6288;
-        }
-        
-        /* Seção de cases / usos estratégicos */
         .use-cases-section {
             background: linear-gradient(135deg, #ffffff 0%, #f8fbfe 100%);
             border-radius: 2rem;
             padding: 2rem 1.8rem;
             margin: 2rem 0 2.5rem 0;
             border: 1px solid #d9e6f2;
-            box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.08);
         }
-        
         .section-title {
             font-size: 1.8rem;
             font-weight: 700;
@@ -347,54 +463,33 @@
             margin-bottom: 0.5rem;
             color: #0a3b55;
         }
-        
-        .section-sub {
-            text-align: center;
-            color: #4f6f8f;
-            margin-bottom: 2rem;
-            font-size: 1rem;
-        }
-        
         .cases-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.8rem;
         }
-        
         .case-card {
             background: white;
             border-radius: 1.5rem;
             padding: 1.5rem;
-            transition: all 0.2s;
             border: 1px solid #e2edf5;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.02);
         }
-        
-        .case-card:hover {
-            transform: translateY(-4px);
-            border-color: #bdd9f0;
-            box-shadow: 0 12px 20px -12px rgba(0,102,204,0.12);
-        }
-        
         .case-icon {
             font-size: 2.2rem;
             color: #0066cc;
             margin-bottom: 1rem;
         }
-        
         .case-card h3 {
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 0.75rem;
             color: #1c4e70;
         }
-        
         .case-card p {
             font-size: 0.9rem;
             color: #2c4a6e;
             line-height: 1.45;
         }
-        
         .case-tag {
             display: inline-block;
             margin-top: 1rem;
@@ -405,32 +500,14 @@
             font-weight: 600;
             color: #0066cc;
         }
-        
-        .quote-highlight {
-            background: #eef2fa;
-            padding: 1rem 1.5rem;
-            border-radius: 1rem;
-            margin-top: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            font-weight: 500;
-            border-left: 5px solid #25a56a;
-        }
-        
-        /* Seção com imagem da Meta */
         .meta-flow-section {
             background: white;
             border-radius: 2rem;
             padding: 2rem;
-            margin: 2rem 0 2rem 0;
+            margin: 2rem 0;
             border: 1px solid #e0edf5;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
             text-align: center;
         }
-        
         .meta-flow-title {
             font-size: 1.5rem;
             font-weight: 700;
@@ -441,29 +518,20 @@
             justify-content: center;
             gap: 12px;
         }
-        
-        .meta-flow-title i {
-            font-size: 2rem;
-            color: #25D366;
-        }
-        
         .flow-image {
             max-width: 100%;
             height: auto;
             border-radius: 1rem;
             margin: 1.5rem 0;
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            border: 1px solid #e2e8f0;
         }
-        
         .meta-pricing {
             background: linear-gradient(135deg, #f0f9ff 0%, #e6f3ff 100%);
             border-radius: 1.8rem;
             padding: 1.8rem;
-            margin: 2rem 0 2rem 0;
+            margin: 2rem 0;
             border: 1px solid #bddaf0;
         }
-        
         .meta-title {
             display: flex;
             align-items: center;
@@ -473,56 +541,29 @@
             margin-bottom: 1.2rem;
             color: #075e54;
         }
-        
-        .meta-title i {
-            font-size: 2rem;
-            color: #25D366;
-        }
-        
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
             margin-bottom: 1.2rem;
         }
-        
         .price-item {
             background: white;
             border-radius: 1rem;
             padding: 1rem;
             text-align: center;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
         }
-        
-        .price-item:hover {
-            transform: scale(1.02);
-        }
-        
         .price-category {
             font-weight: 700;
             font-size: 1rem;
             color: #1f4e79;
             margin-bottom: 0.5rem;
         }
-        
         .price-value {
             font-size: 1.6rem;
             font-weight: 800;
             color: #0066cc;
         }
-        
-        .price-value small {
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-        
-        .price-note {
-            font-size: 0.7rem;
-            color: #5b7a9a;
-            margin-top: 0.3rem;
-        }
-        
         .free-badge {
             background: #d4edda;
             color: #155724;
@@ -532,43 +573,23 @@
             font-weight: 600;
             display: inline-block;
         }
-        
-        .meta-footnote {
-            font-size: 0.75rem;
-            color: #2c5a74;
-            background: #ffffffaa;
-            padding: 0.8rem;
-            border-radius: 0.8rem;
-            margin-top: 1rem;
+        footer {
             text-align: center;
+            border-top: 1px solid #dce5ec;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #5b7b9a;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .simulator-card { padding: 1.5rem; }
+            .total-price { font-size: 2rem; }
         }
         
-        .plan-destaque {
-            background: linear-gradient(135deg, #fff9e6, #fff3d6);
-            border-left: 3px solid #ff9800;
-        }
-        
-        @media (max-width: 640px) {
-            .cases-grid {
-                grid-template-columns: 1fr;
-            }
-            .pricing-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        
-        hr {
-            margin: 20px 0;
-            border: 0;
-            height: 1px;
-            background: linear-gradient(to right, #cbdde9, transparent);
-        }
-        
-        .am2-link-highlight {
-            background: linear-gradient(135deg, #0066cc10, #0099ff10);
-            padding: 0.5rem 1rem;
-            border-radius: 40px;
-            font-weight: 600;
+        .combined-card {
+            background: linear-gradient(135deg, #f8fbfe, white);
+            border: 2px solid #0066cc20;
         }
     </style>
 </head>
@@ -586,295 +607,322 @@
             <a href="http://chat.am2solucoes.com.br/" target="_blank" class="btn-primary">
                 <i class="fab fa-whatsapp"></i> Acessar AM2 Chat
             </a>
-            <a href="#valores" class="btn-outline-site">
-                <i class="fas fa-arrow-down"></i> Ver valores
-            </a>
+            <button onclick="document.getElementById('simulator-tab').click();" class="btn-outline-site">
+                <i class="fas fa-calculator"></i> Simular valores
+            </button>
         </div>
     </div>
 
-    <!-- SEÇÃO: APLICAÇÕES ESTRATÉGICAS NO AMBIENTE HOSPITALAR -->
-    <div class="use-cases-section">
-        <div class="section-title">
-            <i class="fas fa-hospital-user"></i> Além do laudo: use a notificação para otimizar cada ponto de contato
+    <div class="tabs-container">
+        <button class="tab-btn active" id="values-tab" onclick="switchTab('values')">
+            <i class="fas fa-tags"></i> Valores
+        </button>
+        <button class="tab-btn" id="simulator-tab" onclick="switchTab('simulator')">
+            <i class="fas fa-calculator"></i> Simulador Personalizado
+        </button>
+    </div>
+
+    <!-- ABA VALORES (resumida) -->
+    <div id="values-content" class="tab-content active">
+        <div class="use-cases-section">
+            <div class="section-title"><i class="fas fa-hospital-user"></i> Aplicações estratégicas</div>
+            <div class="cases-grid">
+                <div class="case-card"><div class="case-icon"><i class="fas fa-calendar-check"></i></div><h3>Confirmação de agendas</h3><p>Reduza faltas com lembretes automáticos.</p><span class="case-tag">Agendamento</span></div>
+                <div class="case-card"><div class="case-icon"><i class="fas fa-file-alt"></i></div><h3>Orientação pré-exames</h3><p>Instruções automáticas de preparo.</p><span class="case-tag">Protocolo</span></div>
+                <div class="case-card"><div class="case-icon"><i class="fas fa-route"></i></div><h3>Atendimento Inteligente com IA</h3><p>Direcione para setores, forneça informações de serviços, horários, valores e agendamentos. Chat automatizado 24/7.</p><span class="case-tag">Triagem administrativa</span></div>
+                <div class="case-card"><div class="case-icon"><i class="fas fa-scalpel"></i></div><h3>Confirmação de cirurgias</h3><p>Alertas e checklist pré-operatório.</p><span class="case-tag">Segurança</span></div>
+                <div class="case-card"><div class="case-icon"><i class="fas fa-pills"></i></div><h3>Adesão a tratamentos</h3><p>Lembretes de medicação e cuidados.</p><span class="case-tag">Cuidado</span></div>
+                <div class="case-card"><div class="case-icon"><i class="fas fa-chart-line"></i></div><h3>Resultados + agendamento</h3><p>Agende retorno após laudo.</p><span class="case-tag">Jornada</span></div>
+            </div>
         </div>
-        <div class="section-sub">
-            Com a integração do AM2 Notificações ao seu sistema de gestão (ERP, PACS, prontuário), você automatiza fluxos críticos e eleva a experiência.
+
+        <div class="meta-flow-section">
+            <div class="meta-flow-title"><i class="fab fa-whatsapp"></i> Fluxo de tarifação da API Oficial WhatsApp (Meta)</div>
+            <img src="imagem.jpeg" alt="Fluxo de tarifação" class="flow-image" onerror="this.style.display='none'">
+        </div>
+
+        <div class="meta-pricing">
+            <div class="meta-title"><i class="fab fa-whatsapp"></i> Custos da API Oficial WhatsApp (Meta)</div>
+            <div class="pricing-grid">
+                <div class="price-item"><div class="price-category">Marketing</div><div class="price-value">~R$ 0,60<small>/msg</small></div></div>
+                <div class="price-item"><div class="price-category">Utilitário</div><div class="price-value">~R$ 0,06<small>/msg</small></div></div>
+                <div class="price-item"><div class="price-category">Autenticação</div><div class="price-value">~R$ 0,06<small>/msg</small></div></div>
+                <div class="price-item"><div class="price-category">Atendimento</div><div class="price-value"><span class="free-badge">GRÁTIS</span></div></div>
+            </div>
+        </div>
+
+        <div class="solutions-grid">
+            <div class="solution-card">
+                <div class="card-header"><h2><i class="fab fa-whatsapp"></i> AM2 Chat</h2></div>
+                <div class="card-content">
+                    <table class="price-table">
+                        <tr><th>Conexão Principal (1º número)</th><td class="highlight-price">R$ 350,00/mês</td></tr>
+                        <tr><th>Conexões Adicionais (2ª a 5ª)</th><td>R$ 100,00/cada</td></tr>
+                        <tr><th>Conexões Adicionais (6ª em diante)</th><td>R$ 50,00/cada</td></tr>
+                        <tr><th>🔍 Pesquisa NPS</th><td>R$ 250,00</td></tr>
+                        <tr><th>🔌 API Integração ERP</th><td>R$ 350,00</td></tr>
+                        <tr><th>🤖 Agente de IA <span class="ia-badge">automação</span></th><td>R$ 350,00</td></tr>
+                    </table>
+                    <div class="info-note"><i class="fas fa-database"></i><span>10GB de armazenamento por número</span></div>
+                </div>
+            </div>
+            <div class="solution-card">
+                <div class="card-header"><h2><i class="fas fa-bell"></i> AM2 Notificações</h2></div>
+                <div class="card-content">
+                    <div class="notify-plan">
+                        <div class="plan-row"><span class="plan-name">Básico</span><span class="plan-msgs">até 500</span><span class="plan-price">R$ 75,00</span></div>
+                        <div class="plan-row"><span class="plan-name">Intermediário</span><span class="plan-msgs">até 1.000</span><span class="plan-price">R$ 140,00</span></div>
+                        <div class="plan-row plan-destaque"><span class="plan-name">⭐ Mais Escolhido</span><span class="plan-msgs">até 2.000</span><span class="plan-price">R$ 280,00</span></div>
+                        <div class="plan-row"><span class="plan-name">Avançado</span><span class="plan-msgs">até 3.000</span><span class="plan-price">R$ 345,00</span></div>
+                        <div class="plan-row"><span class="plan-name">Corporativo</span><span class="plan-msgs">até 5.000</span><span class="plan-price">R$ 520,00</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABA SIMULADOR COM CHECKBOX PARA INCLUIR NO PACOTE -->
+    <div id="simulator-content" class="tab-content">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 2rem;">
+            <!-- Simulador AM2 Chat -->
+            <div class="simulator-card" id="chatSimulator">
+                <div class="simulator-title">
+                    <i class="fab fa-whatsapp" style="color:#25D366;"></i>
+                    AM2 Chat
+                </div>
+                <div class="simulator-group">
+                    <div class="simulator-label"><i class="fas fa-phone"></i> Números conectados</div>
+                    <input type="number" id="chatNumbers" class="input-number" value="1" min="1" step="1">
+                    <div class="price-detail" style="margin-top: 8px;">
+                        <strong>Regra de precificação:</strong><br>
+                        • 1º número: R$ 350<br>
+                        • 2º ao 5º número: R$ 100 cada<br>
+                        • 6º número em diante: R$ 50 cada
+                    </div>
+                </div>
+                <div class="simulator-group">
+                    <div class="simulator-label"><i class="fas fa-chart-line"></i> Módulos adicionais</div>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item"><input type="checkbox" id="chatNps"> NPS (R$ 250)</label>
+                        <label class="checkbox-item"><input type="checkbox" id="chatApi"> API ERP (R$ 350)</label>
+                        <label class="checkbox-item"><input type="checkbox" id="chatIa"> IA Atendimento (R$ 350)</label>
+                    </div>
+                </div>
+                <div class="total-value">
+                    <div class="total-label">Valor mensal</div>
+                    <div class="total-price" id="chatTotalDisplay">R$ 350,00</div>
+                </div>
+                <label class="include-checkbox" id="includeChatLabel">
+                    <input type="checkbox" id="includeChat" checked>
+                    <span><i class="fas fa-plus-circle"></i> Incluir no pacote combinado</span>
+                </label>
+                <button class="btn-clear" onclick="clearChatSimulator()">
+                    <i class="fas fa-undo-alt"></i> Limpar AM2 Chat
+                </button>
+            </div>
+
+            <!-- Simulador AM2 Notificações -->
+            <div class="simulator-card" id="notifySimulator">
+                <div class="simulator-title">
+                    <i class="fas fa-bell" style="color:#ff9800;"></i>
+                    AM2 Notificações
+                </div>
+                <div class="simulator-group">
+                    <div class="simulator-label"><i class="fas fa-envelope"></i> Plano de mensagens</div>
+                    <select id="notifyPlan" class="plan-select">
+                        <option value="75">Básico - 500 msgs (R$ 75)</option>
+                        <option value="140">Intermediário - 1.000 msgs (R$ 140)</option>
+                        <option value="280" selected>Mais Escolhido - 2.000 msgs (R$ 280)</option>
+                        <option value="345">Avançado - 3.000 msgs (R$ 345)</option>
+                        <option value="520">Corporativo - 5.000 msgs (R$ 520)</option>
+                    </select>
+                </div>
+                <div class="total-value">
+                    <div class="total-label">Valor mensal</div>
+                    <div class="total-price" id="notifyTotalDisplay">R$ 280,00</div>
+                </div>
+                <label class="include-checkbox" id="includeNotifyLabel">
+                    <input type="checkbox" id="includeNotify" checked>
+                    <span><i class="fas fa-plus-circle"></i> Incluir no pacote combinado</span>
+                </label>
+                <button class="btn-clear" onclick="clearNotifySimulator()">
+                    <i class="fas fa-undo-alt"></i> Limpar AM2 Notificações
+                </button>
+            </div>
         </div>
         
-        <div class="cases-grid">
-            <div class="case-card">
-                <div class="case-icon"><i class="fas fa-calendar-check"></i></div>
-                <h3>Confirmação de agendas</h3>
-                <p>Envie lembretes automáticos de consultas, exames ou cirurgias. Reduza faltas em até 40% com confirmação por WhatsApp. Fluxo bidirecional: paciente confirma com 1 clique.</p>
-                <span class="case-tag">Agendamento inteligente</span>
-            </div>
-            <div class="case-card">
-                <div class="case-icon"><i class="fas fa-file-alt"></i></div>
-                <h3>Orientação pré-exames</h3>
-                <p>Disparo automático de instruções (jejum, preparo, documentação) antes de exames. Reduz retrabalho e aumenta conformidade.</p>
-                <span class="case-tag">Adesão ao protocolo</span>
-            </div>
-            <div class="case-card">
-                <div class="case-icon"><i class="fas fa-triage"></i></div>
-                <h3>Triagem no atendimento</h3>
-                <p>Chat interativo para coleta de sintomas e direcionamento. Reduza filas na recepção e priorize urgências com qualificação automática.</p>
-                <span class="case-tag">Pré-atendimento</span>
-            </div>
-            <div class="case-card">
-                <div class="case-icon"><i class="fas fa-scalpel"></i></div>
-                <h3>Confirmação de cirurgias</h3>
-                <p>Alerta com data, horário, local e orientações pós-operatórias. Checklist digital via WhatsApp antes do procedimento.</p>
-                <span class="case-tag">Segurança cirúrgica</span>
-            </div>
-            <div class="case-card">
-                <div class="case-icon"><i class="fas fa-pills"></i></div>
-                <h3>Adesão a tratamentos</h3>
-                <p>Lembretes de medicação, cuidados domiciliares e checklists pós-alta. Melhora indicadores clínicos e reduz reinternações.</p>
-                <span class="case-tag">Cuidado longitudinal</span>
-            </div>
-            <div class="case-card">
-                <div class="case-icon"><i class="fas fa-chart-line"></i></div>
-                <h3>Resultados + agendamento</h3>
-                <p>Após envio do laudo, gatilho para agendar retorno ou telemedicina diretamente pelo WhatsApp. Fidelização e eficiência.</p>
-                <span class="case-tag">Jornada completa</span>
-            </div>
-        </div>
-        
-        <div class="quote-highlight">
-            <i class="fas fa-microphone-alt" style="font-size: 1.6rem; color: #0066cc;"></i>
-            <span><strong>Integração com ERP/PACS:</strong> todo fluxo parte do seu sistema de gestão — sem retrabalho, com rastreabilidade e economia de até 70% do tempo administrativo.</span>
-        </div>
-    </div>
-
-    <!-- SEÇÃO COM IMAGEM DO FLUXO DA META -->
-    <div class="meta-flow-section">
-        <div class="meta-flow-title">
-            <i class="fab fa-whatsapp"></i>
-            <span>Fluxo de tarifação da API Oficial WhatsApp (Meta)</span>
-        </div>
-        <p style="color: #4a627a; margin-bottom: 1rem;">Entenda como funciona a cobrança por conversa e otimize seus custos operacionais</p>
-        <img src="imagem.jpeg" alt="Fluxo de tarifação da API Oficial WhatsApp - Meta" class="flow-image" onerror="this.onerror=null; this.src='https://placehold.co/800x400/e6f3ff/0066cc?text=Fluxo+de+Tarifação+WhatsApp+API'; this.alt='Imagem ilustrativa do fluxo de tarifação'">
-        <div class="meta-footnote" style="margin-top: 1rem; background: #f8fafc;">
-            <i class="fas fa-info-circle"></i> A conversa é iniciada pelo cliente ou pela empresa? Cada categoria tem um custo específico. Utilize mensagens utilitárias para notificações de saúde e mantenha seus custos baixos.
-        </div>
-    </div>
-
-    <!-- SEÇÃO: CUSTOS TRANSPARENTES DA API OFICIAL META -->
-    <div class="meta-pricing">
-        <div class="meta-title">
-            <i class="fab fa-whatsapp"></i>
-            <span>Custos da API Oficial WhatsApp (Meta) por conversa</span>
-        </div>
-        <div class="pricing-grid">
-            <div class="price-item">
-                <div class="price-category"><i class="fas fa-chart-line"></i> Marketing</div>
-                <div class="price-value">~R$ 0,60<small>/msg</small></div>
-                <div class="price-note">Promoções, campanhas, divulgação</div>
-            </div>
-            <div class="price-item">
-                <div class="price-category"><i class="fas fa-file-invoice"></i> Utilitário</div>
-                <div class="price-value">~R$ 0,06<small>/msg</small></div>
-                <div class="price-note">Confirmações, lembretes, notificações</div>
-            </div>
-            <div class="price-item">
-                <div class="price-category"><i class="fas fa-lock"></i> Autenticação</div>
-                <div class="price-value">~R$ 0,06<small>/msg</small></div>
-                <div class="price-note">Códigos de verificação, 2FA</div>
-            </div>
-            <div class="price-item">
-                <div class="price-category"><i class="fas fa-headset"></i> Atendimento</div>
-                <div class="price-value"><span class="free-badge">GRÁTIS</span></div>
-                <div class="price-note">Conversas iniciadas pelo paciente</div>
-            </div>
-        </div>
-        <div class="meta-footnote">
-            <i class="fas fa-info-circle"></i> Valores aproximados por conversa (janela de 24h). Utilize mensagens utilitárias para notificações de saúde e mantenha custos extremamente baixos. <strong>AM2 gerencia toda a conexão sem taxas ocultas.</strong>
-        </div>
-    </div>
-
-    <!-- Grid das duas soluções principais - adicionado ID para ancora -->
-    <div id="valores" class="solutions-grid">
-        
-        <!-- CARD: AM2 CHAT -->
-        <div class="solution-card">
-            <div class="card-header">
-                <h2><i class="fab fa-whatsapp"></i> AM2 Chat</h2>
-                <div class="card-desc">Atendimento humanizado + IA + WhatsApp API oficial. Conecte números e gerencie conversas com eficiência.</div>
-            </div>
-            <div class="card-content">
-                <table class="price-table">
-                    <tr>
-                        <th>Conexão Principal (1º número)</th>
-                        <td class="highlight-price">R$ 350,00 <span style="font-weight:normal; font-size:0.7rem;">/mês</span></td>
-                    </tr>
-                    <tr>
-                        <th>Conexões Adicionais (até 5)</th>
-                        <td>R$ 100,00 <span style="font-size:0.7rem;">/cada</span></td>
-                    </tr>
-                    <tr>
-                        <th>Conexões Adicionais (6ª em diante)</th>
-                        <td>R$ 50,00 <span style="font-size:0.7rem;">/cada</span></td>
-                    </tr>
-                    <tr>
-                        <th>🔍 Pesquisa NPS <i class="fas fa-chart-line" style="font-size:0.7rem;"></i></th>
-                        <td>R$ 250,00</td>
-                    </tr>
-                    <tr>
-                        <th>🔌 API Integração ERP</th>
-                        <td>R$ 350,00</td>
-                    </tr>
-                    <tr>
-                        <th>🤖 Agente de IA para Atendimento <span class="ia-badge">automação inteligente</span></th>
-                        <td>R$ 350,00</td>
-                    </tr>
-                </table>
-                <div class="info-note">
-                    <i class="fas fa-database"></i>
-                    <span><strong>10GB de armazenamento</strong> por número conectado. Segurança e histórico completo.</span>
+        <!-- Card combinado - SÓ SOMA OS ITENS QUE TÊM CHECKBOX MARCADA -->
+        <div id="combinedCard" style="display: block; margin-top: 2rem;">
+            <div class="simulator-card combined-card">
+                <div class="simulator-title">
+                    <i class="fas fa-boxes"></i>
+                    🎯 Pacote Personalizado
                 </div>
-                <div class="storage-note">
-                    <i class="fas fa-cloud-upload-alt"></i> Espaço garantido para mídias e mensagens — ideal para equipes.
+                <div class="price-detail" style="margin-bottom: 1rem;">
+                    <i class="fas fa-info-circle"></i> Marque/desmarque os checkboxes acima para incluir ou remover cada solução do pacote.
                 </div>
-                <div style="margin-top: 1rem; text-align: center;">
-                    <a href="http://chat.am2solucoes.com.br/" target="_blank" style="color: #0066cc; text-decoration: none; font-weight: 600; font-size: 0.85rem;">
-                        <i class="fas fa-external-link-alt"></i> Acessar plataforma AM2 Chat
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- CARD: AM2 NOTIFICAÇÕES - ATUALIZADO COM PLANO DE 2000 MENSAGENS -->
-        <div class="solution-card">
-            <div class="card-header">
-                <h2><i class="fas fa-bell"></i> AM2 Notificações</h2>
-                <div class="card-desc">Disparos automáticos baseados em eventos. Integração com PACS, ERP e sistemas de gestão hospitalar.</div>
-            </div>
-            <div class="card-content">
-                <div style="background:#EFF9FF; border-radius: 1.2rem; padding: 0.8rem 1rem; margin-bottom: 1.6rem;">
-                    <i class="fas fa-stethoscope"></i> <strong>Notifique pacientes automaticamente</strong> assim que o laudo for liberado no PACS.<br>
-                    <span style="font-size:0.8rem;">✔ Comunicação imediata · Economia de tempo · Integração direta com PACS</span>
-                </div>
-                
-                <div style="font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
-                    <i class="fab fa-whatsapp" style="color:#25D366;"></i> Planos via API Oficial WhatsApp
-                </div>
-                <div class="notify-plan">
-                    <div class="plan-row">
-                        <span class="plan-name">Básico</span> 
-                        <span class="plan-msgs">até 500 msgs</span> 
-                        <span class="plan-price">R$ 75,00</span>
+                <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 1rem;">
+                    <div><strong>AM2 Chat:</strong> <span id="combinedChatValue">R$ 350,00</span> 
+                        <span id="chatIncludedBadge" style="background: #d4edda; color: #155724; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.7rem; margin-left: 8px;">✓ incluído</span>
                     </div>
-                    <div class="plan-row">
-                        <span class="plan-name">Intermediário</span> 
-                        <span class="plan-msgs">até 1.000 msgs</span> 
-                        <span class="plan-price">R$ 140,00</span>
+                    <div><strong>AM2 Notificações:</strong> <span id="combinedNotifyValue">R$ 280,00</span>
+                        <span id="notifyIncludedBadge" style="background: #d4edda; color: #155724; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.7rem; margin-left: 8px;">✓ incluído</span>
                     </div>
-                    <div class="plan-row plan-destaque">
-                        <span class="plan-name" style="display: flex; align-items: center; gap: 6px;">
-                            <i class="fas fa-star" style="color: #ff9800; font-size: 0.8rem;"></i> 
-                            Mais Escolhido
-                        </span> 
-                        <span class="plan-msgs" style="background: #ff980020; color: #e67e22;">até 2.000 msgs</span> 
-                        <span class="plan-price" style="color: #e67e22; font-size: 1.2rem;">R$ 280,00</span>
-                    </div>
-                    <div class="plan-row">
-                        <span class="plan-name">Avançado</span> 
-                        <span class="plan-msgs">até 3.000 msgs</span> 
-                        <span class="plan-price">R$ 345,00</span>
-                    </div>
-                    <div class="plan-row">
-                        <span class="plan-name">Corporativo</span> 
-                        <span class="plan-msgs">até 5.000 msgs</span> 
-                        <span class="plan-price">R$ 520,00</span>
-                    </div>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #0066cc;">Total: <span id="combinedTotal">R$ 630,00</span>/mês</div>
                 </div>
-
-                <div class="info-note" style="margin-top: 1.2rem;">
-                    <i class="fas fa-chart-simple"></i>
-                    <span><strong>Envio 100% automático</strong> ao liberar o laudo no PACS — maior satisfação e agilidade no resultado.</span>
-                </div>
-                <div class="info-note" style="margin-top: 0.8rem; background: #eef5ea;">
-                    <i class="fas fa-tachometer-alt"></i>
-                    <span><strong>Escalabilidade:</strong> Planos flexíveis para crescer junto com sua operação. Consulte pacotes customizados para grandes volumes.</span>
-                </div>
+                <div class="price-detail" style="margin-top: 1rem;">* O valor total considera apenas as soluções marcadas como "incluir no pacote".</div>
             </div>
         </div>
     </div>
 
-    <!-- Seção extra: Diferenciais e Destaques -->
-    <div style="background: #ffffffcc; backdrop-filter: blur(2px); border-radius: 2rem; padding: 1.8rem; margin: 1rem 0 2rem 0; border: 1px solid #cde1f0;">
-        <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; align-items: start;">
-            <div style="flex:1; min-width: 200px;">
-                <i class="fas fa-shield-alt" style="font-size: 2rem; color: #0066cc;"></i>
-                <h3 style="margin: 0.5rem 0 0.2rem;">API Oficial WhatsApp</h3>
-                <p style="font-size: 0.85rem;">Segurança, conformidade e alta taxa de entrega. Evita bloqueios.</p>
-            </div>
-            <div style="flex:1; min-width: 200px;">
-                <i class="fas fa-brain" style="font-size: 2rem; color: #0066cc;"></i>
-                <h3 style="margin: 0.5rem 0 0.2rem;">Agente IA + NPS</h3>
-                <p style="font-size: 0.85rem;">Atendimento híbrido com IA e coleta de satisfação (NPS) para melhorar resultados.</p>
-            </div>
-            <div style="flex:1; min-width: 200px;">
-                <i class="fas fa-chart-line" style="font-size: 2rem; color: #0066cc;"></i>
-                <h3 style="margin: 0.5rem 0 0.2rem;">Integração ERP & PACS</h3>
-                <p style="font-size: 0.85rem;">Conecte com seu sistema de gestão ou PACS e automatize totalmente os fluxos.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Tabela comparativa simples para conexões adicionais (detalhe) -->
-    <div style="margin: 2rem 0 1rem;">
-        <div style="background: white; border-radius: 1.5rem; padding: 1.5rem; box-shadow: 0 6px 14px rgba(0,0,0,0.02); border: 1px solid #e2edf2;">
-            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
-                <div>
-                    <i class="fas fa-phone-alt" style="color:#0066cc;"></i>
-                    <strong style="margin-left: 6px;">Expansão de canais no AM2 Chat:</strong>
-                    <span style="color:#2c5a74;"> Adicione até 5 conexões adicionais por R$100,00 e a partir da 6ª por apenas R$50,00.</span>
-                </div>
-                <div>
-                    <span class="highlight-badge" style="background:#deedfc;">+ de 10 números? Consulte condições especiais</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- rodapé com informação de suporte e links -->
     <footer>
         <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1rem;">
-            <a href="http://chat.am2solucoes.com.br/" target="_blank" style="text-decoration: none; color:#0066cc; font-weight: 500;"><i class="fab fa-whatsapp"></i> AM2 Chat - Acessar sistema</a>
+            <a href="http://chat.am2solucoes.com.br/" target="_blank" style="text-decoration: none; color:#0066cc;"><i class="fab fa-whatsapp"></i> AM2 Chat</a>
             <span>|</span>
             <span><i class="fas fa-envelope"></i> contato@am2solucoes.com.br</span>
             <span>|</span>
             <span><i class="fab fa-whatsapp"></i> Suporte comercial</span>
         </div>
-        <p>© 2025 AM2 Soluções em Tecnologia. Todos os direitos reservados. Ambientes seguros e alta disponibilidade.<br>
-        Os valores apresentados são mensais e podem sofrer ajustes conforme política comercial. Consulte condições para planos anuais.</p>
-        <div style="margin-top: 12px; font-size: 0.7rem; opacity: 0.7;">
-            <i class="fas fa-database"></i> Armazenamento incluso: 10GB por número conectado no AM2 Chat. <i class="fas fa-chart-simple"></i> Notificações: integração direta com PACS e envio via API oficial.
-        </div>
+        <p>© 2025 AM2 Soluções em Tecnologia. Valores mensais.</p>
     </footer>
 </div>
 
 <script>
-    (function() {
-        console.log("AM2 Soluções - Página com plano de 2000 mensagens e valores otimizados");
-        const links = document.querySelectorAll('a[href^="http"]');
-        for(let link of links) {
-            if(link.getAttribute('target') !== '_blank') {
-                link.setAttribute('target', '_blank');
-                link.setAttribute('rel', 'noopener noreferrer');
+    // Controle de abas
+    function switchTab(tab) {
+        const valuesTab = document.getElementById('values-content');
+        const simulatorTab = document.getElementById('simulator-content');
+        const valuesBtn = document.getElementById('values-tab');
+        const simulatorBtn = document.getElementById('simulator-tab');
+        
+        if(tab === 'values') {
+            valuesTab.classList.add('active');
+            simulatorTab.classList.remove('active');
+            valuesBtn.classList.add('active');
+            simulatorBtn.classList.remove('active');
+        } else {
+            valuesTab.classList.remove('active');
+            simulatorTab.classList.add('active');
+            valuesBtn.classList.remove('active');
+            simulatorBtn.classList.add('active');
+        }
+    }
+    
+    // Função para cálculo do AM2 Chat (corrigida)
+    function calculateChatTotal() {
+        let numbers = parseInt(document.getElementById('chatNumbers').value) || 1;
+        let total = 0;
+        
+        if(numbers >= 1) {
+            total += 350;
+            
+            let additional = numbers - 1;
+            
+            if(additional > 0) {
+                let firstFour = Math.min(additional, 4);
+                total += firstFour * 100;
+                
+                let remaining = additional - firstFour;
+                if(remaining > 0) {
+                    total += remaining * 50;
+                }
             }
         }
         
-        // Tratamento para imagem caso não carregue (fallback visual)
-        const img = document.querySelector('.flow-image');
-        if(img) {
-            img.onerror = function() {
-                this.style.display = 'none';
-                console.warn('Imagem não encontrada. Certifique-se de que o arquivo imagem.jpeg está na raiz do site.');
-            };
+        if(document.getElementById('chatNps').checked) total += 250;
+        if(document.getElementById('chatApi').checked) total += 350;
+        if(document.getElementById('chatIa').checked) total += 350;
+        
+        document.getElementById('chatTotalDisplay').innerHTML = `R$ ${total.toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2})}`;
+        document.getElementById('combinedChatValue').innerHTML = `R$ ${total.toLocaleString('pt-BR', {minimumFractionDigits:2})}`;
+        
+        updateCombinedTotal();
+    }
+    
+    function calculateNotifyTotal() {
+        let planValue = parseFloat(document.getElementById('notifyPlan').value);
+        document.getElementById('notifyTotalDisplay').innerHTML = `R$ ${planValue.toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2})}`;
+        document.getElementById('combinedNotifyValue').innerHTML = `R$ ${planValue.toLocaleString('pt-BR', {minimumFractionDigits:2})}`;
+        
+        updateCombinedTotal();
+    }
+    
+    function updateCombinedTotal() {
+        let chatValue = 0;
+        let notifyValue = 0;
+        let includeChat = document.getElementById('includeChat').checked;
+        let includeNotify = document.getElementById('includeNotify').checked;
+        
+        let chatText = document.getElementById('chatTotalDisplay').innerText;
+        let notifyText = document.getElementById('notifyTotalDisplay').innerText;
+        
+        chatValue = parseFloat(chatText.replace('R$ ', '').replace(/\./g, '').replace(',', '.'));
+        notifyValue = parseFloat(notifyText.replace('R$ ', '').replace(/\./g, '').replace(',', '.'));
+        
+        let total = 0;
+        if(includeChat) total += chatValue;
+        if(includeNotify) total += notifyValue;
+        
+        document.getElementById('combinedTotal').innerHTML = `R$ ${total.toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2})}`;
+        
+        // Atualizar badges visuais
+        const chatBadge = document.getElementById('chatIncludedBadge');
+        const notifyBadge = document.getElementById('notifyIncludedBadge');
+        
+        if(includeChat) {
+            chatBadge.innerHTML = '✓ incluído';
+            chatBadge.style.background = '#d4edda';
+            chatBadge.style.color = '#155724';
+        } else {
+            chatBadge.innerHTML = '⊘ excluído';
+            chatBadge.style.background = '#f8d7da';
+            chatBadge.style.color = '#721c24';
         }
-    })();
+        
+        if(includeNotify) {
+            notifyBadge.innerHTML = '✓ incluído';
+            notifyBadge.style.background = '#d4edda';
+            notifyBadge.style.color = '#155724';
+        } else {
+            notifyBadge.innerHTML = '⊘ excluído';
+            notifyBadge.style.background = '#f8d7da';
+            notifyBadge.style.color = '#721c24';
+        }
+    }
+    
+    // Funções de limpar
+    function clearChatSimulator() {
+        document.getElementById('chatNumbers').value = '1';
+        document.getElementById('chatNps').checked = false;
+        document.getElementById('chatApi').checked = false;
+        document.getElementById('chatIa').checked = false;
+        document.getElementById('includeChat').checked = true;
+        calculateChatTotal();
+    }
+    
+    function clearNotifySimulator() {
+        document.getElementById('notifyPlan').value = '280';
+        document.getElementById('includeNotify').checked = true;
+        calculateNotifyTotal();
+    }
+    
+    function clearAllSimulators() {
+        clearChatSimulator();
+        clearNotifySimulator();
+    }
+    
+    // Event listeners
+    document.getElementById('chatNumbers').addEventListener('input', calculateChatTotal);
+    document.getElementById('chatNps').addEventListener('change', calculateChatTotal);
+    document.getElementById('chatApi').addEventListener('change', calculateChatTotal);
+    document.getElementById('chatIa').addEventListener('change', calculateChatTotal);
+    document.getElementById('notifyPlan').addEventListener('change', calculateNotifyTotal);
+    document.getElementById('includeChat').addEventListener('change', updateCombinedTotal);
+    document.getElementById('includeNotify').addEventListener('change', updateCombinedTotal);
+    
+    // Inicialização
+    calculateChatTotal();
+    calculateNotifyTotal();
 </script>
 </body>
 </html>
