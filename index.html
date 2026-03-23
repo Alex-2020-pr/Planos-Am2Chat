@@ -402,9 +402,100 @@
             border-left: 5px solid #25a56a;
         }
         
+        /* Nova seção: Custos API Oficial Meta */
+        .meta-pricing {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e6f3ff 100%);
+            border-radius: 1.8rem;
+            padding: 1.8rem;
+            margin: 2rem 0 2rem 0;
+            border: 1px solid #bddaf0;
+        }
+        
+        .meta-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: #075e54;
+        }
+        
+        .meta-title i {
+            font-size: 2rem;
+            color: #25D366;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+        
+        .price-item {
+            background: white;
+            border-radius: 1rem;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        
+        .price-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .price-category {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #1f4e79;
+            margin-bottom: 0.5rem;
+        }
+        
+        .price-value {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #0066cc;
+        }
+        
+        .price-value small {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .price-note {
+            font-size: 0.7rem;
+            color: #5b7a9a;
+            margin-top: 0.3rem;
+        }
+        
+        .free-badge {
+            background: #d4edda;
+            color: #155724;
+            padding: 0.2rem 0.6rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        .meta-footnote {
+            font-size: 0.75rem;
+            color: #2c5a74;
+            background: #ffffffaa;
+            padding: 0.8rem;
+            border-radius: 0.8rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        
         @media (max-width: 640px) {
             .cases-grid {
                 grid-template-columns: 1fr;
+            }
+            .pricing-grid {
+                grid-template-columns: 1fr 1fr;
             }
         }
         
@@ -433,7 +524,7 @@
         </div>
     </div>
 
-    <!-- NOVA SEÇÃO: APLICAÇÕES ESTRATÉGICAS NO AMBIENTE HOSPITALAR -->
+    <!-- SEÇÃO: APLICAÇÕES ESTRATÉGICAS NO AMBIENTE HOSPITALAR -->
     <div class="use-cases-section">
         <div class="section-title">
             <i class="fas fa-hospital-user"></i> Além do laudo: use a notificação para otimizar cada ponto de contato
@@ -484,6 +575,39 @@
         <div class="quote-highlight">
             <i class="fas fa-microphone-alt" style="font-size: 1.6rem; color: #0066cc;"></i>
             <span><strong>Integração com ERP/PACS:</strong> todo fluxo parte do seu sistema de gestão — sem retrabalho, com rastreabilidade e economia de até 70% do tempo administrativo.</span>
+        </div>
+    </div>
+
+    <!-- NOVA SEÇÃO: CUSTOS TRANSPARENTES DA API OFICIAL META -->
+    <div class="meta-pricing">
+        <div class="meta-title">
+            <i class="fab fa-whatsapp"></i>
+            <span>Custos da API Oficial WhatsApp (Meta) por conversa</span>
+        </div>
+        <div class="pricing-grid">
+            <div class="price-item">
+                <div class="price-category"><i class="fas fa-chart-line"></i> Marketing</div>
+                <div class="price-value">~R$ 0,60<small>/msg</small></div>
+                <div class="price-note">Promoções, campanhas, divulgação</div>
+            </div>
+            <div class="price-item">
+                <div class="price-category"><i class="fas fa-file-invoice"></i> Utilitário</div>
+                <div class="price-value">~R$ 0,06<small>/msg</small></div>
+                <div class="price-note">Confirmações, lembretes, notificações</div>
+            </div>
+            <div class="price-item">
+                <div class="price-category"><i class="fas fa-lock"></i> Autenticação</div>
+                <div class="price-value">~R$ 0,06<small>/msg</small></div>
+                <div class="price-note">Códigos de verificação, 2FA</div>
+            </div>
+            <div class="price-item">
+                <div class="price-category"><i class="fas fa-headset"></i> Atendimento</div>
+                <div class="price-value"><span class="free-badge">GRÁTIS</span></div>
+                <div class="price-note">Conversas iniciadas pelo paciente</div>
+            </div>
+        </div>
+        <div class="meta-footnote">
+            <i class="fas fa-info-circle"></i> Valores aproximados por conversa (janela de 24h). Utilize mensagens utilitárias para notificações de saúde e mantenha custos extremamente baixos. <strong>AM2 gerencia toda a conexão sem taxas ocultas.</strong>
         </div>
     </div>
 
@@ -629,7 +753,7 @@
 
 <script>
     (function() {
-        console.log("AM2 Soluções - Página de valores otimizada para ambiente hospitalar e clínicas");
+        console.log("AM2 Soluções - Página de valores otimizada para ambiente hospitalar com transparência de custos Meta");
         const links = document.querySelectorAll('a[href^="http"]');
         for(let link of links) {
             if(link.getAttribute('target') !== '_blank') {
