@@ -276,17 +276,6 @@
             color: #0c4e6e;
         }
 
-        .api-wa {
-            background: #eef5ea;
-            border-left: 4px solid #25d366;
-        }
-
-        .api-am2 {
-            background: #f1f3fe;
-            border-left: 4px solid #4169e1;
-            margin-top: 1rem;
-        }
-
         .highlight-badge {
             background: #e9f7e1;
             color: #2b6e3b;
@@ -554,6 +543,11 @@
             text-align: center;
         }
         
+        .plan-destaque {
+            background: linear-gradient(135deg, #fff9e6, #fff3d6);
+            border-left: 3px solid #ff9800;
+        }
+        
         @media (max-width: 640px) {
             .cases-grid {
                 grid-template-columns: 1fr;
@@ -749,7 +743,7 @@
             </div>
         </div>
 
-        <!-- CARD: AM2 NOTIFICAÇÕES -->
+        <!-- CARD: AM2 NOTIFICAÇÕES - ATUALIZADO COM PLANO DE 2000 MENSAGENS -->
         <div class="solution-card">
             <div class="card-header">
                 <h2><i class="fas fa-bell"></i> AM2 Notificações</h2>
@@ -762,28 +756,46 @@
                 </div>
                 
                 <div style="font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
-                    <i class="fab fa-whatsapp" style="color:#25D366;"></i> Via API Oficial WhatsApp
+                    <i class="fab fa-whatsapp" style="color:#25D366;"></i> Planos via API Oficial WhatsApp
                 </div>
                 <div class="notify-plan">
-                    <div class="plan-row"><span class="plan-name">Básico</span> <span class="plan-msgs">até 500 msgs</span> <span class="plan-price">R$ 75,00</span></div>
-                    <div class="plan-row"><span class="plan-name">Intermediário</span> <span class="plan-msgs">até 1.000 msgs</span> <span class="plan-price">R$ 140,00</span></div>
-                    <div class="plan-row"><span class="plan-name">Avançado</span> <span class="plan-msgs">até 3.000 msgs</span> <span class="plan-price">R$ 345,00</span></div>
-                    <div class="plan-row"><span class="plan-name">Corporativo</span> <span class="plan-msgs">até 5.000 msgs</span> <span class="plan-price">R$ 520,00</span></div>
+                    <div class="plan-row">
+                        <span class="plan-name">Básico</span> 
+                        <span class="plan-msgs">até 500 msgs</span> 
+                        <span class="plan-price">R$ 75,00</span>
+                    </div>
+                    <div class="plan-row">
+                        <span class="plan-name">Intermediário</span> 
+                        <span class="plan-msgs">até 1.000 msgs</span> 
+                        <span class="plan-price">R$ 140,00</span>
+                    </div>
+                    <div class="plan-row plan-destaque">
+                        <span class="plan-name" style="display: flex; align-items: center; gap: 6px;">
+                            <i class="fas fa-star" style="color: #ff9800; font-size: 0.8rem;"></i> 
+                            Mais Escolhido
+                        </span> 
+                        <span class="plan-msgs" style="background: #ff980020; color: #e67e22;">até 2.000 msgs</span> 
+                        <span class="plan-price" style="color: #e67e22; font-size: 1.2rem;">R$ 280,00</span>
+                    </div>
+                    <div class="plan-row">
+                        <span class="plan-name">Avançado</span> 
+                        <span class="plan-msgs">até 3.000 msgs</span> 
+                        <span class="plan-price">R$ 345,00</span>
+                    </div>
+                    <div class="plan-row">
+                        <span class="plan-name">Corporativo</span> 
+                        <span class="plan-msgs">até 5.000 msgs</span> 
+                        <span class="plan-price">R$ 520,00</span>
+                    </div>
                 </div>
 
-                <div style="font-weight: 600; margin: 20px 0 8px 0; display: flex; align-items: center; gap: 6px;">
-                    <i class="fas fa-code"></i> Via API da AM2 (Conexão própria)
-                </div>
-                <div class="api-am2" style="background:#F4F5FC; border-radius: 1rem; padding: 0.9rem 1rem;">
-                    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: baseline;">
-                        <span><strong>💬 Mensagens Ilimitadas</strong> <span class="highlight-badge" style="background:#d9e6ff;">Sem limite de disparos</span></span>
-                        <span class="plan-price" style="font-size:1.2rem;">R$ 250,00 <span style="font-size:0.7rem;">/mês</span></span>
-                    </div>
-                    <div style="font-size:0.75rem; margin-top: 8px;">Ideal para alto volume, integração simplificada e custo fixo mensal.</div>
-                </div>
                 <div class="info-note" style="margin-top: 1.2rem;">
                     <i class="fas fa-chart-simple"></i>
                     <span><strong>Envio 100% automático</strong> ao liberar o laudo no PACS — maior satisfação e agilidade no resultado.</span>
+                </div>
+                <div class="info-note" style="margin-top: 0.8rem; background: #eef5ea;">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span><strong>Escalabilidade:</strong> Planos flexíveis para crescer junto com sua operação. Consulte pacotes customizados para grandes volumes.</span>
                 </div>
             </div>
         </div>
@@ -845,7 +857,7 @@
 
 <script>
     (function() {
-        console.log("AM2 Soluções - Página com fluxo da Meta e valores transparentes");
+        console.log("AM2 Soluções - Página com plano de 2000 mensagens e valores otimizados");
         const links = document.querySelectorAll('a[href^="http"]');
         for(let link of links) {
             if(link.getAttribute('target') !== '_blank') {
