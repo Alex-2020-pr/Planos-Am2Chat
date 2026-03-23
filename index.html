@@ -73,6 +73,56 @@
             opacity: 0.85;
         }
 
+        /* Link destaque para o AM2 Chat */
+        .hero-cta {
+            margin-top: 1.8rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #0066cc, #0099ff);
+            color: white;
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,102,204,0.3);
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,102,204,0.4);
+            background: linear-gradient(135deg, #0052a3, #0088ee);
+        }
+
+        .btn-outline-site {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            border: 1.5px solid #0077cc;
+            padding: 0.85rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            color: #0077cc;
+            transition: 0.2s;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .btn-outline-site:hover {
+            background: #0077cc;
+            color: white;
+        }
+
         /* dois cards principais de soluções */
         .solutions-grid {
             display: flex;
@@ -224,27 +274,6 @@
             font-weight: 800;
             font-size: 1.1rem;
             color: #0c4e6e;
-        }
-
-        .btn-outline-site {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: transparent;
-            border: 1.5px solid #0077cc;
-            padding: 0.6rem 1.2rem;
-            border-radius: 40px;
-            font-weight: 600;
-            color: #0077cc;
-            margin-top: 1rem;
-            transition: 0.2s;
-            text-decoration: none;
-            font-size: 0.85rem;
-        }
-
-        .btn-outline-site:hover {
-            background: #0077cc;
-            color: white;
         }
 
         .api-wa {
@@ -402,7 +431,42 @@
             border-left: 5px solid #25a56a;
         }
         
-        /* Nova seção: Custos API Oficial Meta */
+        /* Seção com imagem da Meta */
+        .meta-flow-section {
+            background: white;
+            border-radius: 2rem;
+            padding: 2rem;
+            margin: 2rem 0 2rem 0;
+            border: 1px solid #e0edf5;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        
+        .meta-flow-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #075e54;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .meta-flow-title i {
+            font-size: 2rem;
+            color: #25D366;
+        }
+        
+        .flow-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 1rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+        }
+        
         .meta-pricing {
             background: linear-gradient(135deg, #f0f9ff 0%, #e6f3ff 100%);
             border-radius: 1.8rem;
@@ -505,6 +569,13 @@
             height: 1px;
             background: linear-gradient(to right, #cbdde9, transparent);
         }
+        
+        .am2-link-highlight {
+            background: linear-gradient(135deg, #0066cc10, #0099ff10);
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -517,9 +588,12 @@
         <div class="hero-sub">
             AM2 Chat + AM2 Notificações: automação humanizada, integração com sistemas hospitalares e gestão completa de relacionamento.
         </div>
-        <div style="margin-top: 1.8rem;">
-            <a href="http://chat.am2solucoes.com.br/" target="_blank" class="btn-outline-site" style="background:#0077cc10; border-color:#0077cc;">
-                <i class="fas fa-external-link-alt"></i> Conheça o ambiente AM2 Chat
+        <div class="hero-cta">
+            <a href="http://chat.am2solucoes.com.br/" target="_blank" class="btn-primary">
+                <i class="fab fa-whatsapp"></i> Acessar AM2 Chat
+            </a>
+            <a href="#valores" class="btn-outline-site">
+                <i class="fas fa-arrow-down"></i> Ver valores
             </a>
         </div>
     </div>
@@ -578,7 +652,20 @@
         </div>
     </div>
 
-    <!-- NOVA SEÇÃO: CUSTOS TRANSPARENTES DA API OFICIAL META -->
+    <!-- SEÇÃO COM IMAGEM DO FLUXO DA META -->
+    <div class="meta-flow-section">
+        <div class="meta-flow-title">
+            <i class="fab fa-whatsapp"></i>
+            <span>Fluxo de tarifação da API Oficial WhatsApp (Meta)</span>
+        </div>
+        <p style="color: #4a627a; margin-bottom: 1rem;">Entenda como funciona a cobrança por conversa e otimize seus custos operacionais</p>
+        <img src="imagem.jpeg" alt="Fluxo de tarifação da API Oficial WhatsApp - Meta" class="flow-image" onerror="this.onerror=null; this.src='https://placehold.co/800x400/e6f3ff/0066cc?text=Fluxo+de+Tarifação+WhatsApp+API'; this.alt='Imagem ilustrativa do fluxo de tarifação'">
+        <div class="meta-footnote" style="margin-top: 1rem; background: #f8fafc;">
+            <i class="fas fa-info-circle"></i> A conversa é iniciada pelo cliente ou pela empresa? Cada categoria tem um custo específico. Utilize mensagens utilitárias para notificações de saúde e mantenha seus custos baixos.
+        </div>
+    </div>
+
+    <!-- SEÇÃO: CUSTOS TRANSPARENTES DA API OFICIAL META -->
     <div class="meta-pricing">
         <div class="meta-title">
             <i class="fab fa-whatsapp"></i>
@@ -611,8 +698,8 @@
         </div>
     </div>
 
-    <!-- Grid das duas soluções principais -->
-    <div class="solutions-grid">
+    <!-- Grid das duas soluções principais - adicionado ID para ancora -->
+    <div id="valores" class="solutions-grid">
         
         <!-- CARD: AM2 CHAT -->
         <div class="solution-card">
@@ -653,6 +740,11 @@
                 </div>
                 <div class="storage-note">
                     <i class="fas fa-cloud-upload-alt"></i> Espaço garantido para mídias e mensagens — ideal para equipes.
+                </div>
+                <div style="margin-top: 1rem; text-align: center;">
+                    <a href="http://chat.am2solucoes.com.br/" target="_blank" style="color: #0066cc; text-decoration: none; font-weight: 600; font-size: 0.85rem;">
+                        <i class="fas fa-external-link-alt"></i> Acessar plataforma AM2 Chat
+                    </a>
                 </div>
             </div>
         </div>
@@ -737,7 +829,7 @@
     <!-- rodapé com informação de suporte e links -->
     <footer>
         <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1rem;">
-            <a href="http://chat.am2solucoes.com.br/" target="_blank" style="text-decoration: none; color:#0066cc; font-weight: 500;"><i class="fas fa-comment"></i> AM2 Chat Oficial</a>
+            <a href="http://chat.am2solucoes.com.br/" target="_blank" style="text-decoration: none; color:#0066cc; font-weight: 500;"><i class="fab fa-whatsapp"></i> AM2 Chat - Acessar sistema</a>
             <span>|</span>
             <span><i class="fas fa-envelope"></i> contato@am2solucoes.com.br</span>
             <span>|</span>
@@ -753,13 +845,22 @@
 
 <script>
     (function() {
-        console.log("AM2 Soluções - Página de valores otimizada para ambiente hospitalar com transparência de custos Meta");
+        console.log("AM2 Soluções - Página com fluxo da Meta e valores transparentes");
         const links = document.querySelectorAll('a[href^="http"]');
         for(let link of links) {
             if(link.getAttribute('target') !== '_blank') {
                 link.setAttribute('target', '_blank');
                 link.setAttribute('rel', 'noopener noreferrer');
             }
+        }
+        
+        // Tratamento para imagem caso não carregue (fallback visual)
+        const img = document.querySelector('.flow-image');
+        if(img) {
+            img.onerror = function() {
+                this.style.display = 'none';
+                console.warn('Imagem não encontrada. Certifique-se de que o arquivo imagem.jpeg está na raiz do site.');
+            };
         }
     })();
 </script>
