@@ -165,7 +165,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* Estilos da aba Valores (restaurados) */
+        /* Estilos da aba Valores - VERSÃO RESTAURADA */
         .use-cases-section {
             background: linear-gradient(135deg, #ffffff 0%, #f8fbfe 100%);
             border-radius: 2rem;
@@ -719,6 +719,21 @@
             .simulator-card { padding: 1.5rem; }
             .total-price { font-size: 2rem; }
         }
+        
+        /* Estilos para impressão */
+        @media print {
+            .no-print, .btn-pdf, .btn-clear, .tabs-container, .hero-cta, footer {
+                display: none !important;
+            }
+            .container {
+                padding: 0;
+                margin: 0;
+            }
+            .simulator-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
     </style>
 </head>
 <body>
@@ -750,7 +765,7 @@
         </button>
     </div>
 
-    <!-- ABA VALORES - VERSÃO RESTAURADA COM DESCRITIVOS -->
+    <!-- ABA VALORES - VERSÃO RESTAURADA -->
     <div id="values-content" class="tab-content active">
         <div class="use-cases-section">
             <div class="section-title">
@@ -763,13 +778,13 @@
                 <div class="case-card">
                     <div class="case-icon"><i class="fas fa-calendar-check"></i></div>
                     <h3>Confirmação de agendas</h3>
-                    <p>Envie lembretes automáticos de consultas, exames ou cirurgias. Reduza faltas em até 40%.</p>
+                    <p>Envie lembretes automáticos de consultas, exames ou cirurgias. Reduza faltas em até 40% com confirmação por WhatsApp.</p>
                     <span class="case-tag">Agendamento inteligente</span>
                 </div>
                 <div class="case-card">
                     <div class="case-icon"><i class="fas fa-file-alt"></i></div>
                     <h3>Orientação pré-exames</h3>
-                    <p>Disparo automático de instruções (jejum, preparo, documentação) antes de exames.</p>
+                    <p>Disparo automático de instruções (jejum, preparo, documentação) antes de exames. Reduz retrabalho e aumenta conformidade.</p>
                     <span class="case-tag">Adesão ao protocolo</span>
                 </div>
                 <div class="case-card">
@@ -781,19 +796,19 @@
                 <div class="case-card">
                     <div class="case-icon"><i class="fas fa-scalpel"></i></div>
                     <h3>Confirmação de cirurgias</h3>
-                    <p>Alerta com data, horário, local e orientações pós-operatórias. Checklist digital via WhatsApp.</p>
+                    <p>Alerta com data, horário, local e orientações pós-operatórias. Checklist digital via WhatsApp antes do procedimento.</p>
                     <span class="case-tag">Segurança cirúrgica</span>
                 </div>
                 <div class="case-card">
                     <div class="case-icon"><i class="fas fa-pills"></i></div>
                     <h3>Adesão a tratamentos</h3>
-                    <p>Lembretes de medicação, cuidados domiciliares e checklists pós-alta.</p>
+                    <p>Lembretes de medicação, cuidados domiciliares e checklists pós-alta. Melhora indicadores clínicos e reduz reinternações.</p>
                     <span class="case-tag">Cuidado longitudinal</span>
                 </div>
                 <div class="case-card">
                     <div class="case-icon"><i class="fas fa-chart-line"></i></div>
                     <h3>Resultados + agendamento</h3>
-                    <p>Após envio do laudo, gatilho para agendar retorno ou telemedicina.</p>
+                    <p>Após envio do laudo, gatilho para agendar retorno ou telemedicina diretamente pelo WhatsApp. Fidelização e eficiência.</p>
                     <span class="case-tag">Jornada completa</span>
                 </div>
             </div>
@@ -986,39 +1001,8 @@
             </div>
         </div>
         
-        <!-- Card combinado com botão PDF -->
-        <div id="combinedCard" style="margin-top: 2rem;">
-            <div class="simulator-card combined-card">
-                <div class="simulator-title"><i class="fas fa-boxes"></i> 🎯 Resumo do Pacote Personalizado</div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
-                    <div>
-                        <strong>AM2 Chat:</strong> <span id="combinedChatValue">R$ 350,00</span>/mês<br>
-                        <span style="color:#e67e22;">Implantação: <span id="combinedChatImpl">R$ 3.040,00</span></span><br>
-                        <span id="combinedChatInstallmentText">(À vista)</span>
-                    </div>
-                    <div>
-                        <strong>AM2 Notificações:</strong> <span id="combinedNotifyValue">R$ 280,00</span>/mês<br>
-                        <span style="color:#e67e22;">Implantação: <span id="combinedNotifyImpl">R$ 1.520,00</span></span><br>
-                        <span id="combinedNotifyInstallmentText">(À vista)</span>
-                    </div>
-                </div>
-                <div class="total-value" style="margin-top: 1rem;">
-                    <div class="total-label">Total mensal (recorrente)</div>
-                    <div class="total-price" id="combinedTotalMonthly">R$ 630,00</div>
-                    <div class="total-label" style="margin-top: 0.5rem;">Total implantação (única)</div>
-                    <div class="total-price" style="color:#e67e22;" id="combinedTotalImpl">R$ 4.560,00</div>
-                    <div class="total-label" style="margin-top: 0.5rem;">Parcelamento implantação</div>
-                    <div class="total-price" style="font-size: 1.5rem; color:#e67e22;" id="combinedInstallmentTotal">R$ 380,00/mês (12x)</div>
-                </div>
-                
-                <button class="btn-pdf" onclick="gerarPDF()">
-                    <i class="fas fa-file-pdf"></i> 📄 Exportar Proposta em PDF
-                </button>
-                <div class="price-detail" style="text-align: center; margin-top: 0.5rem;">
-                    * O PDF será gerado apenas com os produtos marcados como "Incluir no pacote"
-                </div>
-            </div>
-        </div>
+        <!-- Card combinado -->
+        <div id="combinedCard" style="margin-top: 2rem;"></div>
         
         <div style="margin-top: 1.5rem; text-align: center;">
             <button class="btn-clear" onclick="clearAllSimulators()" style="width: auto; padding: 0.8rem 2rem; background: #0066cc; color: white; border: none;">
@@ -1073,47 +1057,42 @@
         if(document.getElementById('chatIa').checked) total += 350;
         
         document.getElementById('chatTotalDisplay').innerHTML = `R$ ${total.toLocaleString('pt-BR', {minimumFractionDigits:2})}`;
-        document.getElementById('combinedChatValue').innerHTML = `R$ ${total.toLocaleString('pt-BR', {minimumFractionDigits:2})}`;
         
         chatImplValue = parseInt(document.querySelector('input[name="chatImplementation"]:checked').value);
         document.getElementById('chatImplementationDisplay').innerHTML = `R$ ${chatImplValue.toLocaleString('pt-BR', {minimumFractionDigits:2})}`;
-        document.getElementById('combinedChatImpl').innerHTML = `R$ ${chatImplValue.toLocaleString('pt-BR', {minimumFractionDigits:2})}`;
         
         updateChatInstallment();
-        updateCombinedTotal();
+        updateCombinedCard();
     }
     
     function calculateNotifyTotal() {
         let planValue = parseFloat(document.getElementById('notifyPlan').value);
         document.getElementById('notifyTotalDisplay').innerHTML = `R$ ${planValue.toLocaleString('pt-BR', {minimumFractionDigits:2})}`;
-        document.getElementById('combinedNotifyValue').innerHTML = `R$ ${planValue.toLocaleString('pt-BR', {minimumFractionDigits:2})}`;
         
         updateNotifyInstallment();
-        updateCombinedTotal();
+        updateCombinedCard();
     }
     
     function updateChatInstallment() {
         chatInstallment = parseInt(document.getElementById('chatInstallment').value);
         let parcelValue = chatImplValue / chatInstallment;
         document.getElementById('chatInstallmentValue').innerHTML = `Valor da parcela: R$ ${parcelValue.toLocaleString('pt-BR', {minimumFractionDigits:2})}/mês (${chatInstallment}x)`;
-        updateCombinedTotal();
+        updateCombinedCard();
     }
     
     function updateNotifyInstallment() {
         notifyInstallment = parseInt(document.getElementById('notifyInstallment').value);
         let parcelValue = notifyImplValue / notifyInstallment;
         document.getElementById('notifyInstallmentValue').innerHTML = `Valor da parcela: R$ ${parcelValue.toLocaleString('pt-BR', {minimumFractionDigits:2})}/mês (${notifyInstallment}x)`;
-        updateCombinedTotal();
+        updateCombinedCard();
     }
     
-    function updateCombinedTotal() {
-        let chatText = document.getElementById('chatTotalDisplay').innerText;
-        let notifyText = document.getElementById('notifyTotalDisplay').innerText;
-        let chatValue = parseFloat(chatText.replace('R$ ', '').replace(/\./g, '').replace(',', '.'));
-        let notifyValue = parseFloat(notifyText.replace('R$ ', '').replace(/\./g, '').replace(',', '.'));
-        
+    function updateCombinedCard() {
         let includeChat = document.getElementById('includeChat').checked;
         let includeNotify = document.getElementById('includeNotify').checked;
+        
+        let chatValue = parseFloat(document.getElementById('chatTotalDisplay').innerText.replace('R$ ', '').replace(/\./g, '').replace(',', '.'));
+        let notifyValue = parseFloat(document.getElementById('notifyTotalDisplay').innerText.replace('R$ ', '').replace(/\./g, '').replace(',', '.'));
         
         let totalMonthly = 0;
         let totalImpl = 0;
@@ -1121,29 +1100,72 @@
         let chatInstallmentValue = chatImplValue / chatInstallment;
         let notifyInstallmentValue = notifyImplValue / notifyInstallment;
         
-        if(includeChat) { 
-            totalMonthly += chatValue; 
+        let chatHtml = '';
+        let notifyHtml = '';
+        
+        if(includeChat) {
+            totalMonthly += chatValue;
             totalImpl += chatImplValue;
             totalInstallmentMonthly += chatInstallmentValue;
-            document.getElementById('combinedChatInstallmentText').innerHTML = `(${chatInstallment}x de R$ ${chatInstallmentValue.toLocaleString('pt-BR', {minimumFractionDigits:2})})`;
-        } else {
-            document.getElementById('combinedChatInstallmentText').innerHTML = `(Não incluído)`;
+            chatHtml = `
+                <div>
+                    <strong>AM2 Chat:</strong> ${document.getElementById('chatTotalDisplay').innerText}/mês<br>
+                    <span style="color:#e67e22;">Implantação: R$ ${chatImplValue.toLocaleString('pt-BR', {minimumFractionDigits:2})}</span><br>
+                    <span>(${chatInstallment}x de R$ ${chatInstallmentValue.toLocaleString('pt-BR', {minimumFractionDigits:2})})</span>
+                </div>
+            `;
         }
         
-        if(includeNotify) { 
-            totalMonthly += notifyValue; 
+        if(includeNotify) {
+            totalMonthly += notifyValue;
             totalImpl += notifyImplValue;
             totalInstallmentMonthly += notifyInstallmentValue;
-            document.getElementById('combinedNotifyInstallmentText').innerHTML = `(${notifyInstallment}x de R$ ${notifyInstallmentValue.toLocaleString('pt-BR', {minimumFractionDigits:2})})`;
-        } else {
-            document.getElementById('combinedNotifyInstallmentText').innerHTML = `(Não incluído)`;
+            notifyHtml = `
+                <div>
+                    <strong>AM2 Notificações:</strong> ${document.getElementById('notifyTotalDisplay').innerText}/mês<br>
+                    <span style="color:#e67e22;">Implantação: R$ ${notifyImplValue.toLocaleString('pt-BR', {minimumFractionDigits:2})}</span><br>
+                    <span>(${notifyInstallment}x de R$ ${notifyInstallmentValue.toLocaleString('pt-BR', {minimumFractionDigits:2})})</span>
+                </div>
+            `;
         }
         
         let maxInstallment = Math.max(includeChat ? chatInstallment : 1, includeNotify ? notifyInstallment : 1);
         
-        document.getElementById('combinedTotalMonthly').innerHTML = `R$ ${totalMonthly.toLocaleString('pt-BR', {minimumFractionDigits:2})}`;
-        document.getElementById('combinedTotalImpl').innerHTML = `R$ ${totalImpl.toLocaleString('pt-BR', {minimumFractionDigits:2})}`;
-        document.getElementById('combinedInstallmentTotal').innerHTML = `R$ ${totalInstallmentMonthly.toLocaleString('pt-BR', {minimumFractionDigits:2})}/mês (${maxInstallment}x)`;
+        const combinedCard = document.getElementById('combinedCard');
+        
+        if(!includeChat && !includeNotify) {
+            combinedCard.innerHTML = `
+                <div class="simulator-card combined-card" style="text-align: center;">
+                    <div class="simulator-title"><i class="fas fa-info-circle"></i> Nenhum produto selecionado</div>
+                    <p>Marque "Incluir no pacote" em pelo menos um dos simuladores acima para visualizar o resumo.</p>
+                </div>
+            `;
+            return;
+        }
+        
+        combinedCard.innerHTML = `
+            <div class="simulator-card combined-card" id="resumoProposta">
+                <div class="simulator-title"><i class="fas fa-boxes"></i> 🎯 Resumo do Pacote Personalizado</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                    ${chatHtml}
+                    ${notifyHtml}
+                </div>
+                <div class="total-value" style="margin-top: 1rem;">
+                    <div class="total-label">Total mensal (recorrente)</div>
+                    <div class="total-price">R$ ${totalMonthly.toLocaleString('pt-BR', {minimumFractionDigits:2})}</div>
+                    <div class="total-label" style="margin-top: 0.5rem;">Total implantação (única)</div>
+                    <div class="total-price" style="color:#e67e22;">R$ ${totalImpl.toLocaleString('pt-BR', {minimumFractionDigits:2})}</div>
+                    <div class="total-label" style="margin-top: 0.5rem;">Parcelamento implantação</div>
+                    <div class="total-price" style="font-size: 1.5rem; color:#e67e22;">R$ ${totalInstallmentMonthly.toLocaleString('pt-BR', {minimumFractionDigits:2})}/mês (${maxInstallment}x)</div>
+                </div>
+                <button class="btn-pdf" onclick="gerarPDF()">
+                    <i class="fas fa-file-pdf"></i> 📄 Exportar Proposta em PDF
+                </button>
+                <div class="price-detail" style="text-align: center; margin-top: 0.5rem;">
+                    * O PDF será gerado apenas com os produtos marcados como "Incluir no pacote"
+                </div>
+            </div>
+        `;
     }
     
     function clearChatSimulator() {
@@ -1177,131 +1199,58 @@
         let includeChat = document.getElementById('includeChat').checked;
         let includeNotify = document.getElementById('includeNotify').checked;
         
-        // Se nenhum produto estiver selecionado, alertar
         if(!includeChat && !includeNotify) {
             alert('Selecione pelo menos um produto para gerar a proposta.');
             return;
         }
         
-        let chatValue = document.getElementById('chatTotalDisplay').innerText;
-        let notifyValue = document.getElementById('notifyTotalDisplay').innerText;
-        let chatImpl = document.getElementById('combinedChatImpl').innerText;
-        let notifyImpl = document.getElementById('combinedNotifyImpl').innerText;
-        let totalMonthly = document.getElementById('combinedTotalMonthly').innerHTML;
-        let totalImpl = document.getElementById('combinedTotalImpl').innerHTML;
-        let installmentText = document.getElementById('combinedInstallmentTotal').innerHTML;
+        // Capturar o elemento do resumo
+        const resumoElement = document.getElementById('resumoProposta');
         
-        let chatNumbers = document.getElementById('chatNumbers').value;
-        let chatModules = [];
-        if(document.getElementById('chatNps').checked) chatModules.push('Pesquisa NPS');
-        if(document.getElementById('chatApi').checked) chatModules.push('API ERP');
-        if(document.getElementById('chatIa').checked) chatModules.push('Agente IA');
+        if (!resumoElement) {
+            alert('Erro ao gerar PDF. Tente novamente.');
+            return;
+        }
         
-        let notifyPlanText = document.getElementById('notifyPlan').options[document.getElementById('notifyPlan').selectedIndex].text;
+        // Criar um clone do elemento para o PDF
+        const cloneResumo = resumoElement.cloneNode(true);
         
-        let chatInstallmentValue = chatImplValue / chatInstallment;
-        let notifyInstallmentValue = notifyImplValue / notifyInstallment;
+        // Remover o botão do clone
+        const btnPdf = cloneResumo.querySelector('.btn-pdf');
+        if(btnPdf) btnPdf.remove();
         
-        // Criar conteúdo HTML do PDF
-        const pdfContent = `
-        <div style="font-family: 'Inter', sans-serif; padding: 40px; max-width: 1100px; margin: 0 auto; background: white;">
+        // Criar container para o PDF
+        const pdfContainer = document.createElement('div');
+        pdfContainer.style.fontFamily = 'Inter, sans-serif';
+        pdfContainer.style.padding = '40px';
+        pdfContainer.style.maxWidth = '1100px';
+        pdfContainer.style.margin = '0 auto';
+        pdfContainer.style.backgroundColor = 'white';
+        
+        // Adicionar cabeçalho
+        pdfContainer.innerHTML = `
             <div style="text-align: center; padding-bottom: 30px; border-bottom: 3px solid #0066cc; margin-bottom: 30px;">
                 <div style="font-size: 2.5rem; font-weight: 800; color: #0066cc;">AM2 Soluções</div>
                 <div style="font-size: 1.8rem; font-weight: 700; margin: 15px 0 8px;">Proposta Comercial</div>
-                <div style="color: #6c757d;">${new Date().toLocaleDateString('pt-BR')}</div>
+                <div style="color: #6c757d; font-size: 0.9rem;">${new Date().toLocaleDateString('pt-BR')}</div>
             </div>
-            
-            <div style="margin-bottom: 30px;">
-                <h2 style="color: #0066cc; border-left: 4px solid #0066cc; padding-left: 15px; margin-bottom: 20px;">📋 Resumo da Simulação</h2>
-                <table style="width: 100%; border-collapse: collapse;">
-                    ${includeChat ? `
-                    <tr style="border-bottom: 1px solid #dee2e6;">
-                        <td style="padding: 12px; vertical-align: top; width: 30%;"><strong>AM2 Chat</strong></td>
-                        <td style="padding: 12px; width: 50%;">
-                            ${chatNumbers} número(s) conectado(s)<br>
-                            ${chatModules.length > 0 ? 'Módulos: ' + chatModules.join(', ') + '<br>' : ''}
-                            <span style="color: #e67e22;">Implantação: ${chatImpl} (${chatInstallment}x de R$ ${chatInstallmentValue.toLocaleString('pt-BR', {minimumFractionDigits:2})})</span>
-                        </td>
-                        <td style="padding: 12px; text-align: right; width: 20%;"><strong>${chatValue}</strong>/mês</td>
-                    </tr>
-                    ` : ''}
-                    ${includeNotify ? `
-                    <tr style="border-bottom: 1px solid #dee2e6;">
-                        <td style="padding: 12px; vertical-align: top;"><strong>AM2 Notificações</strong></td>
-                        <td style="padding: 12px;">
-                            ${notifyPlanText}<br>
-                            <span style="color: #e67e22;">Implantação: ${notifyImpl} (${notifyInstallment}x de R$ ${notifyInstallmentValue.toLocaleString('pt-BR', {minimumFractionDigits:2})})</span>
-                        </td>
-                        <td style="padding: 12px; text-align: right;"><strong>${notifyValue}</strong>/mês</td>
-                    </tr>
-                    ` : ''}
-                </table>
-                
-                <div style="background: #f0f7fe; padding: 20px; border-radius: 12px; margin-top: 20px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-                        <div><strong>💰 Total Mensal (recorrente):</strong><br><span style="font-size: 1.8rem; font-weight: 800; color: #0066cc;">${totalMonthly}</span></div>
-                        <div><strong>💼 Total Implantação (única):</strong><br><span style="font-size: 1.5rem; font-weight: 800; color: #e67e22;">${totalImpl}</span></div>
-                        <div><strong>📆 Parcelamento Implantação:</strong><br><span style="font-size: 1.3rem; font-weight: 700; color: #e67e22;">${installmentText}</span></div>
-                    </div>
-                </div>
-            </div>
-            
-            <div style="margin-bottom: 30px;">
-                <h2 style="color: #0066cc; border-left: 4px solid #0066cc; padding-left: 15px; margin-bottom: 20px;">✨ Benefícios Inclusos</h2>
-                <ul style="margin-left: 30px; line-height: 1.8;">
-                    <li>✓ Atendimento humanizado com WhatsApp API oficial (Meta)</li>
-                    <li>✓ Automação de notificações: agendamentos, cirurgias e resultados de exames</li>
-                    <li>✓ 10GB de armazenamento por número conectado no AM2 Chat</li>
-                    <li>✓ Suporte técnico especializado e treinamento incluso</li>
-                    <li>✓ Integração com sistemas ERP e PACS</li>
-                </ul>
-            </div>
-            
-            <div style="margin-bottom: 30px;">
-                <h2 style="color: #0066cc; border-left: 4px solid #0066cc; padding-left: 15px; margin-bottom: 20px;">📊 Custos de Mensagens (API Oficial WhatsApp)</h2>
-                <table style="width: 100%; border-collapse: collapse;">
-                    <tr style="background: #f8f9fa;">
-                        <th style="padding: 10px; text-align: left;">Tipo</th>
-                        <th style="padding: 10px; text-align: left;">Custo</th>
-                        <th style="padding: 10px; text-align: left;">Exemplos</th>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #dee2e6;">
-                        <td style="padding: 10px;">Marketing</td>
-                        <td style="padding: 10px;">~R$ 0,60/msg</td>
-                        <td style="padding: 10px;">promoções, campanhas</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #dee2e6;">
-                        <td style="padding: 10px;">Utilitário</td>
-                        <td style="padding: 10px;">~R$ 0,06/msg</td>
-                        <td style="padding: 10px;">confirmações, lembretes, boletos</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #dee2e6;">
-                        <td style="padding: 10px;">Autenticação</td>
-                        <td style="padding: 10px;">~R$ 0,06/msg</td>
-                        <td style="padding: 10px;">códigos de verificação</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px;">Atendimento</td>
-                        <td style="padding: 10px;"><span style="background: #d4edda; padding: 3px 8px; border-radius: 20px;">GRÁTIS</span></td>
-                        <td style="padding: 10px;">conversas iniciadas pelo paciente</td>
-                    </tr>
-                </table>
-            </div>
-            
+        `;
+        
+        // Adicionar o conteúdo clonado
+        const contentDiv = document.createElement('div');
+        contentDiv.innerHTML = cloneResumo.innerHTML;
+        pdfContainer.appendChild(contentDiv);
+        
+        // Adicionar informações adicionais
+        pdfContainer.innerHTML += `
             <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #dee2e6; text-align: center; font-size: 0.75rem; color: #6c757d;">
                 <p>AM2 Soluções em Tecnologia - contato@am2solucoes.com.br</p>
                 <p>Esta proposta é válida por 30 dias. Valores sujeitos a alteração.</p>
+                <p style="margin-top: 5px;">* Taxas de implantação únicas, parcelamento em até 12x sem juros.</p>
             </div>
-        </div>
         `;
         
-        // Criar elemento temporário para o PDF
-        const element = document.createElement('div');
-        element.innerHTML = pdfContent;
-        element.style.position = 'absolute';
-        element.style.left = '-9999px';
-        element.style.top = '-9999px';
-        document.body.appendChild(element);
+        document.body.appendChild(pdfContainer);
         
         const opt = {
             margin: [0.5, 0.5, 0.5, 0.5],
@@ -1311,12 +1260,12 @@
             jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
         };
         
-        html2pdf().set(opt).from(element).save().then(() => {
-            document.body.removeChild(element);
+        html2pdf().set(opt).from(pdfContainer).save().then(() => {
+            document.body.removeChild(pdfContainer);
         }).catch(err => {
             console.error('Erro ao gerar PDF:', err);
             alert('Erro ao gerar PDF. Tente novamente.');
-            document.body.removeChild(element);
+            document.body.removeChild(pdfContainer);
         });
     }
     
@@ -1326,8 +1275,8 @@
     document.getElementById('chatApi').addEventListener('change', calculateChatTotal);
     document.getElementById('chatIa').addEventListener('change', calculateChatTotal);
     document.getElementById('notifyPlan').addEventListener('change', calculateNotifyTotal);
-    document.getElementById('includeChat').addEventListener('change', updateCombinedTotal);
-    document.getElementById('includeNotify').addEventListener('change', updateCombinedTotal);
+    document.getElementById('includeChat').addEventListener('change', updateCombinedCard);
+    document.getElementById('includeNotify').addEventListener('change', updateCombinedCard);
     document.getElementById('chatInstallment').addEventListener('change', updateChatInstallment);
     document.getElementById('notifyInstallment').addEventListener('change', updateNotifyInstallment);
     document.querySelectorAll('input[name="chatImplementation"]').forEach(radio => {
@@ -1336,6 +1285,7 @@
     
     calculateChatTotal();
     calculateNotifyTotal();
+    updateCombinedCard();
 </script>
 </body>
 </html>
